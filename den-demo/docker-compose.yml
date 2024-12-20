@@ -1,0 +1,17 @@
+# Use postgres/example user/password credentials
+version: '3.9'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: Den
+      POSTGRES_PASSWORD: Den2005
+      POSTGRES_DB: Dendb
+    ports:
+      - "5437:5432"
+    volumes:
+          - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
